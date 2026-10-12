@@ -5,6 +5,6 @@
  * simply edit the `recipientEmail` field below!
  */
 export const CONTACT_CONFIG = {
-  recipientEmail: 'madhavan09072003@gmail.com',
+  recipientEmail: 'yourviewinteriors03@gmail.com',
   studioName: 'Your View Home Interiors',
 } as const;
