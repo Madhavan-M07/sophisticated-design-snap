@@ -1,24 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import living from '@/assets/living-room.jpg';
+import { pageHead } from '@/data/projects';
+import { Introduction, SelectedWork, ServicesSection, Philosophy, Process, ContactBand } from '@/components/studio/sections';
+export const Route=createFileRoute('/')({head:()=>pageHead('AUREL — Considered spaces, timeless interiors','An independent interior architecture studio creating thoughtfully crafted homes and workplaces. Explore our design studies and considered approach.'),component:Index});
+function Index(){return <><section className="hero"><img className="hero-image" src={living} alt="An expansive villa living room with sculptural furniture, travertine and a lush garden" width={1920} height={1088} fetchPriority="high"/><div className="container hero-content reveal"><span className="eyebrow hero-kicker">Architecture · Interiors · Artful living</span><h1>Considered spaces.<br/><em>Timeless living.</em></h1><p className="hero-description">Interiors that go beyond the beautiful.<br/>Made for the way you live.</p><div className="hero-actions"><Button asChild variant="studio"><Link to="/projects">Explore our work <ArrowUpRight/></Link></Button><Button asChild variant="inverse"><Link to="/contact">Start a conversation <ArrowUpRight/></Link></Button></div></div><div className="hero-bottom"><div className="container hero-bottom-row"><a href="#studio-introduction" className="scroll-link">Scroll to discover <ArrowDown size={14}/></a><span className="hero-caption">The Courtyard House — A study in quiet luxury</span><div className="hero-count">01 <span/> 03</div></div></div></section><div className="identity-strip"><div className="container"><span>Independent design. Exceptional spaces.</span><span>Residential · Commercial · Bespoke</span><span>Rooted in detail</span></div></div><div id="studio-introduction"><Introduction/></div><SelectedWork/><ServicesSection/><Philosophy/><Process/><ContactBand/></>}
