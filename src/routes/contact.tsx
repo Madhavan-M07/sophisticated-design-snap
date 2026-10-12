@@ -4,7 +4,7 @@ import { ArrowDownToLine, ArrowUpRight, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { pageHead } from '@/data/projects';
 import { CONTACT_CONFIG } from '@/config/contact';
-import dining from '@/assets/dining-room.jpg';
+import dining from '@/assets/real-dining-arch.jpg';
 
 export const Route = createFileRoute('/contact')({
   head: () =>
@@ -88,7 +88,7 @@ function Contact() {
         <aside className="contact-aside">
           <img
             src={dining}
-            alt="A quiet dining space in natural stone and linen"
+            alt="Authentic crafted dining archway with wooden breakfast counter and pendant lighting"
             width={1536}
             height={1024}
             loading="lazy"
